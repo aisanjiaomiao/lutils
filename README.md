@@ -1,6 +1,6 @@
 # lutils
 
-> 此工具包是在**[outils](https://github.com/proYang/outils/blob/master/README.md)**的基础上,加上个人平时收集的代码片段进行的二次整合
+> 此工具包是在 ** [outils](https://github.com/proYang/outils/blob/master/README.md) ** 的基础上,加上个人平时收集的代码片段进行的二次整合
 > outils的GitHub:https://github.com/proYang/outils/blob/master/README.md
 
 业务开发过程中，会经常用到`日期格式化`、`url参数转对象`、`浏览器类型判断`、`节流函数`等常用函数，为避免不同项目多次复制粘贴的麻烦，这里统一封装，并发布到npm，以提高开发效率。如果你也有常用的代码，欢迎为本项目提交pr。
