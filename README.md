@@ -19,7 +19,8 @@
   </script>
 ```
 
- 
+## 函数
+
 ### Cookie
 - #### [getCookie](./src/cookie/getCookie.js) 根据name读取Cookie
 - #### [removeCookie](./src/cookie/removeCookie.js) 根据name删除Cookie
@@ -113,6 +114,8 @@
 - #### [setScrollTop](./src/dom/setScrollTop.js) 设置滚动条距顶部的距离
 - #### [windowResize](./src/dom/windowResize.js) H5软键盘缩回、弹起回调
 - #### [append](./src/dom/append.js) 追加html类似jQ中的html()
+- #### [fullscreen.full](./src/dom/fullscreen.js) 进入全屏模式
+- #### [fullscreen.exit](./src/dom/fullscreen.js) 退出全屏模式
 
 ### Xml
 - #### [json2xml](./src/xml/json2xml.js) json转xml文本
