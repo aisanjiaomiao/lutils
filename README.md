@@ -8,6 +8,7 @@
 
 直接下载`min`目录下的[lutils.min.js](./min/lutils.min.js)或[lutils.full.min.js](./min/lutils.full.min.js)   
 推荐根据自己的的实际需求,自行进行打包
+可通过 `Object.keys(lutils)` 查看内置封装函数
 
 ### 浏览器使用示例:
 ``` html 
