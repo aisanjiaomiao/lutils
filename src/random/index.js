@@ -36,6 +36,22 @@ function randomChars(len) {
     return s;
 };
 
+/**
+ * @desc 打乱数组内部元素顺序
+ * @param {Array} arr 
+ */
+function randomSort(arr){
+    return arr.sort(() => Math.random() - 0.5);
+}
+
+/**
+ * @desc 生成UUID
+ * @return {String}
+ */
+function UUID(){
+	return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>(c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
+}
+
 module.exports = {
-    randomColor, randomNum, randomChars
+    randomColor, randomNum, randomChars,randomSort,UUID
 };
