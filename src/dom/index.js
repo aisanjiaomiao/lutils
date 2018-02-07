@@ -7,7 +7,8 @@ const scrollTo = require('./scrollTo');
 const setScrollTop = require('./setScrollTop');
 const windowResize = require('./windowResize');
 const append=require("./append");
-const fullscreen=require("./fullscreen");
+const fullScreen=require("./fullscreen");
+const exitFullScreen=require("./exitfullscreen");
 
 module.exports = {
     addClass,
@@ -19,5 +20,6 @@ module.exports = {
     setScrollTop,
     windowResize,
     append,
-    fullscreen
+    fullScreen,
+    exitFullScreen
 };
