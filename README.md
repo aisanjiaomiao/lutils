@@ -33,6 +33,11 @@
 - #### [isEmpty](./src/json/isEmpty.js) 判断对象或数组是否为空
 - #### [copy](./src/json/copy.js) 一般拷贝，浅拷贝
 - #### [arrayEqual](./src/json/arrayEqual.js) 判断数组是否相等
+- #### [countArray](./src/json/countArray.js) 判断数组项在数组中出现的次数
+- #### [reverse](./src/json/reverse.js) Object数据翻转 key value翻转 或 数组翻转
+- #### [optionArr2Obj](./src/json/optionArr2Obj.js) 例如:[{value: '选项1',label: '黄金糕'},...] 转 {'黄金糕':'选项1',...}
+- #### [obj2OptionArr](./src/json/obj2OptionArr.js) 例如:{'黄金糕':'选项1',...} 转[{value: '选项1',label: '黄金糕'},...]
+- #### [initRangeArray](./src/json/initRangeArray.js) 生成指定范围的整数数组
 
 ### Str (String)
 - #### [replaceAll](./src/str/replaceAll.js) 替换所有
@@ -104,6 +109,8 @@
 - #### [randomColor](./src/random/index.js) 随机生成颜色
 - #### [randomNum](./src/random/index.js) 生成指定范围随机数
 - #### [randomChars](./src/random/index.js) 生成随机字符串([A~Z],[a~z],[0~9])
+- #### [randomSort](./src/random/index.js) 打乱数组内部顺序
+- #### [UUID](./src/random/index.js) 生成UUID
 
 ### Dom
 - #### [addClass](./src/dom/addClass.js) 为元素添加class
@@ -115,8 +122,8 @@
 - #### [setScrollTop](./src/dom/setScrollTop.js) 设置滚动条距顶部的距离
 - #### [windowResize](./src/dom/windowResize.js) H5软键盘缩回、弹起回调
 - #### [append](./src/dom/append.js) 追加html类似jQ中的html()
-- #### [fullscreen.full](./src/dom/fullscreen.js) 进入全屏模式
-- #### [fullscreen.exit](./src/dom/fullscreen.js) 退出全屏模式
+- #### [fullScreen](./src/dom/fullscreen.js) 进入全屏模式
+- #### [exitFullScreen](./src/dom/exitfullscreen.js) 退出全屏模式
 
 ### Xml
 - #### [json2xml](./src/xml/json2xml.js) json转xml文本
