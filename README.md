@@ -60,6 +60,7 @@
 - #### [toDataURL](./src/file/toDataURL.js) 文件转DataURL 
 - #### [base64UrlToBlob](./src/file/base64UrlToBlob.js) base64转Blob 或 ArrayBuffer
 - #### [downloadByUrl](./src/file/downloadByUrl.js) 通过url下载文件
+- #### [bytesToSize](./src/file/bytesToSize.js) 计算文件大小
 
 ### Num (Number)
 - #### [accAdd](./src/num/index.js) 精确的加法计算
