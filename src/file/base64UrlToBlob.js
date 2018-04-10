@@ -1,19 +1,15 @@
 /**  
- * 将以base64的图片url数据转换为Blob  
- * @param {String} urlData   用url方式表示的base64图片数据 
- * @param {Object} type 文件类型
- * @param {Boolean} isAB 是否返回ArrayBuffer
- * @return {Blob | ArrayBuffer} 
+ * 计算文件大小 
+ * @param {Number} bytes 文件二进制大小 
+ * @param {Number} l 保留几位小数
+ * @return {String} 
  */
-function base64UrlToBlob(urlData, type, isAB) {
-    var bytes = window.atob(urlData.split(',')[1]);        //去掉url的头，并转换为byte  
-    //处理异常,将ascii码小于0的转换为大于0  
-    var ab = new ArrayBuffer(bytes.length);
-    var ia = new Uint8Array(ab);
-    for (var i = 0; i < bytes.length; i++) {
-        ia[i] = bytes.charCodeAt(i);
-    }
-    return isAB ? ab : (new Blob([ab], type || { type: 'application/octet-stream' }));
+function bytesToSize(bytes,l) {
+    if (bytes === 0) return '0 B';
+    var k = 1024;
+    sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    var i = Math.floor(Math.log(bytes) / Math.log(k));
+    return (bytes / Math.pow(k, i)).toPrecision(2+(l?l:1)) + ' ' + sizes[i];// 后面保留一位小数，如1.0GB       
 }
 
-module.exports = base64UrlToBlob;
+module.exports = bytesToSize;
