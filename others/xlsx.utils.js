@@ -80,12 +80,13 @@ var xlsxUtils = {
      * @desc 格式化数据为Sheet格式
      * @param {Array} json 数据
      */
-    format2Sheet(json, n) {
-        var keyMap = Object.keys(json[0]);
-        n=n||0;
-        var tmpdata = [];//用来保存转换好的json 
+    format2Sheet(json, n, r, keyMap) {
+        keyMap = keyMap || Object.keys(json[0]);
+        n = n || 0;
+        r = r || 0;
+        var tmpdata = {};//用来保存转换好的json 
         json.map((v, i) => keyMap.map((k, j) => Object.assign({}, {
-            v: v[k], position: ((j + n) > 25 ? xlsxUtils.getCharCol((j + n)) : String.fromCharCode(65 + (j + n))) + (i + 1)
+            v: v[k], position: ((j + n) > 25 ? xlsxUtils.getCharCol((j + n)) : String.fromCharCode(65 + (j + n))) + (i + 1 + r)
         }))).reduce((prev, next) => prev.concat(next)).forEach((v, i) => tmpdata[v.position] = {
             v: v.v
         });
@@ -96,19 +97,16 @@ var xlsxUtils = {
      * @param {Array} sheetData 
      * @param {String} title 
      * @param {Object} wb 
+     * @param {Object} ref
      */
-    format2WB(sheetData, title = "mySheet", wb) {
+    format2WB(sheetData, title, wb, ref) {
+        title = title || "mySheet";
         var outputPos = Object.keys(sheetData);
-        if (!wb) {
-            wb = new Object();
-            wb.Sheets = {};
-            wb.SheetNames = [];
-        }
+        if (!wb) wb = { Sheets: {}, SheetNames: [] };
         wb.SheetNames.push(title);
-        wb.Sheets[title] = Object.assign({}, sheetData, //内容
-            {
-                '!ref': outputPos[0] + ':' + outputPos[outputPos.length - 1] //设置填充区域
-            });
+        wb.Sheets[title] = Object.assign({}, sheetData, {
+            '!ref': ref || (outputPos[0] + ':' + outputPos[outputPos.length - 1])//设置填充区域
+        });
         return wb;
     },
     /**
