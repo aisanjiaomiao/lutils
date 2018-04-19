@@ -79,16 +79,23 @@ var xlsxUtils = {
     /**
      * @desc 格式化数据为Sheet格式
      * @param {Array} json 数据
+     * @param {Number} n 列偏移
+     * @param {Number} r 行偏移
+     * @param {Array} keyMap 对象键数组
+     * @param {Function|Boolean} t 数据
      */
-    format2Sheet(json, n, r, keyMap) {
+    format2Sheet(json, n, r, keyMap, t) {
         keyMap = keyMap || Object.keys(json[0]);
+        var types = (t == undefined ? ((v) => ({ "number": "n", undefined: "s", "boolean": "b" })[typeof v]) : t);
         n = n || 0;
         r = r || 0;
         var tmpdata = {};//用来保存转换好的json 
-        json.map((v, i) => keyMap.map((k, j) => Object.assign({}, {
-            v: v[k], position: ((j + n) > 25 ? xlsxUtils.getCharCol((j + n)) : String.fromCharCode(65 + (j + n))) + (i + 1 + r)
+        var t1 = json.map((v, i) => keyMap.map((k, j) => Object.assign({}, {
+            v: v[k],
+            position: ((j + n) > 25 ? xlsxUtils.getCharCol((j + n)) : String.fromCharCode(65 + (j + n))) + (i + 1 + r),
         }))).reduce((prev, next) => prev.concat(next)).forEach((v, i) => tmpdata[v.position] = {
-            v: v.v
+            v: v.v,
+            t: types?types(v.v):"s"
         });
         return tmpdata;
     },
