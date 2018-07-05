@@ -1,8 +1,6 @@
-﻿function getEtag(buffer, callback) {
+function getEtag(buffer, callback) {
 	// sha1算法
-	var shA1 = function (content) {
-		return sha1.digest(content);
-	};
+	var shA1 =  sha1.digest;
 
 	// 以4M为单位分割
 	var blockSize = 4 * 1024 * 1024;
@@ -16,12 +14,12 @@
 	for (var i = 0; i < blockCount; i++) {
 		sha1String.push(shA1(buffer.slice(i * blockSize, (i + 1) * blockSize)));
 	}
-	function concatArr2Uint8(s) {
+	function concatArr2Uint8(s) {//Array 2 Uint8Array
 		var tmp = [];
 		for (var i of s) tmp = tmp.concat(i);
 		return new Uint8Array(tmp);
 	}
-	function Uint8ToBase64(u8Arr, urisafe) {
+	function Uint8ToBase64(u8Arr, urisafe) {//Uint8Array 2 Base64
 		var CHUNK_SIZE = 0x8000; //arbitrary number
 		var index = 0;
 		var length = u8Arr.length;
