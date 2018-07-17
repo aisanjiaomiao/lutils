@@ -38,6 +38,8 @@
 - #### [optionArr2Obj](./src/json/optionArr2Obj.js) 例如:[{value: '选项1',label: '黄金糕'},...] 转 {'黄金糕':'选项1',...}
 - #### [obj2OptionArr](./src/json/obj2OptionArr.js) 例如:{'黄金糕':'选项1',...} 转[{value: '选项1',label: '黄金糕'},...]
 - #### [initRangeArray](./src/json/initRangeArray.js) 生成指定范围的整数数组
+- #### [arrFind](./src/json/arrFind.js) 数组查找出想要对对象或数组
+- #### [objFields](./src/json/objFields.js) 过滤出字段组成新对象
 
 ### Str (String)
 - #### [replaceAll](./src/str/replaceAll.js) 替换所有
