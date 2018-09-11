@@ -86,7 +86,7 @@ var xlsxUtils = {
      */
     format2Sheet(json, n, r, keyMap, t) {
         keyMap = keyMap || Object.keys(json[0]);
-        var types = (t == undefined ? ((v) => ({ "number": "n", undefined: "s", "boolean": "b" })[typeof v]) : t);
+        var types = (t == undefined ? ((v) => (({ "number": "n", undefined: "s", "boolean": "b","string":s })[typeof v])||"s") : t);
         n = n || 0;
         r = r || 0;
         var tmpdata = {};//用来保存转换好的json 
