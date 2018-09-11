@@ -112,7 +112,7 @@ var xlsxUtils = {
         if (!wb) wb = { Sheets: {}, SheetNames: [] };
         wb.SheetNames.push(title);
         wb.Sheets[title] = Object.assign({}, sheetData, {
-            '!ref': ref || (outputPos[0] + ':' + outputPos[outputPos.length - 1])//设置填充区域
+            '!ref': ref || (outputPos[0] + ':' + outputPos.reverse().find(_=>_.indexOf("!")==-1))//设置填充区域
         });
         return wb;
     },
