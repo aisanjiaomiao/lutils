@@ -7,6 +7,7 @@
 - **lutils.full.min.js**
 - **lutils.js**
 - **lutils.min.js**
+  
 库使用是[rollup](https://www.rollupjs.org/guide/en/)进行打包，推荐根据自己的的实际需求自行进行打包
 
 
