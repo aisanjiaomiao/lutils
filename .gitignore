@@ -2,11 +2,13 @@
 *.log
 *.zip
 .DS_Store
-test.html
+package-lock.json
 
 # folders
 node_modules/*
 coverage/*
+test/*
+
 
 # Editor directories and files
 .vscode
