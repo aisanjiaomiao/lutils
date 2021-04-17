@@ -19,4 +19,4 @@ function formatPassTime(startTime) {
     else return '刚刚'
 }
 
-module.exports = formatPassTime
+export default   formatPassTime

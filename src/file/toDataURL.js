@@ -14,4 +14,4 @@ function toDataURL(file, c, isBase) {
     reader.readAsDataURL(file);
 }
 
-module.exports = toDataURL;
+export default   toDataURL;

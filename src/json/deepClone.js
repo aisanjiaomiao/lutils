@@ -31,4 +31,4 @@ function deepClone(values) {
     throw new Error("Unable to copy values! Its type isn't supported.");
 }
 
-module.exports = deepClone;
+export default   deepClone;

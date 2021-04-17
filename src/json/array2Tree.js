@@ -23,4 +23,4 @@ function array2Tree(a, idStr, pidStr, chindrenStr){
     return r;    
 }
 
-module.exports = array2Tree
+export default   array2Tree

@@ -1,9 +1,9 @@
-const toBlobURL = require('./toBlobURL');
-const toDataURL = require('./toDataURL');
-const base64UrlToBlob=require("./base64UrlToBlob"); 
-const base64UrlToFile=require("./base64UrlToFile"); 
-const downloadByUrl=require("./downloadByUrl");
-const bytesToSize=require('./bytesToSize');
-module.exports = {
+import toBlobURL  from './toBlobURL';
+import toDataURL  from './toDataURL';
+import base64UrlToBlob from "./base64UrlToBlob"; 
+import base64UrlToFile from "./base64UrlToFile"; 
+import downloadByUrl from "./downloadByUrl";
+import bytesToSize from './bytesToSize';
+export default   {
     toBlobURL, toDataURL,base64UrlToBlob,downloadByUrl,bytesToSize,base64UrlToFile
 };

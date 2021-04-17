@@ -7,4 +7,4 @@
 function string2date(s, f) {
     return new Date(Date.parse(s.replace(f || /-/g, "/")));
 }
-module.exports = string2date
+export default   string2date

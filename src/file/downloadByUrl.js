@@ -14,4 +14,4 @@ function downloadByUrl(l, n) {
     document.querySelector('#' + f.id).click();
     document.body.removeChild(document.getElementById(f.id));
 }
-module.exports = downloadByUrl;
+export default   downloadByUrl;

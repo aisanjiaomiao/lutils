@@ -1,0 +1,28 @@
+{
+  "name": "lutils",
+  "version": "2.0.0",
+  "description": "个人日常收集的JavaScript函数库",
+  "scripts": {
+    "build": "npm run build.js",
+    "start": "npm run build.js"
+  },
+  "main": "build.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/baojuhua/lutils.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "execa": "^5.0.0",
+    "rollup": "~2.45.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}

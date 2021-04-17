@@ -11,4 +11,4 @@ function exitfullScreen() {
         document.webkitExitFullscreen();
     }
 }
-module.exports =  exitfullScreen;
+export default    exitfullScreen;

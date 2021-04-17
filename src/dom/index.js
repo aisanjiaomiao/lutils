@@ -1,16 +1,16 @@
-const addClass = require('./addClass');
-const getScrollTop = require('./getScrollTop');
-const hasClass = require('./hasClass');
-const offset = require('./offset');
-const removeClass = require('./removeClass');
-const scrollTo = require('./scrollTo');
-const setScrollTop = require('./setScrollTop');
-const windowResize = require('./windowResize');
-const append=require("./append");
-const fullScreen=require("./fullscreen");
-const exitFullScreen=require("./exitfullscreen");
+import addClass  from './addClass';
+import getScrollTop  from './getScrollTop';
+import hasClass  from './hasClass';
+import offset  from './offset';
+import removeClass  from './removeClass';
+import scrollTo  from './scrollTo';
+import setScrollTop  from './setScrollTop';
+import windowResize  from './windowResize';
+import append from "./append";
+import fullScreen from "./fullscreen";
+import exitFullScreen from "./exitfullscreen";
 
-module.exports = {
+export default   {
     addClass,
     getScrollTop,
     hasClass,

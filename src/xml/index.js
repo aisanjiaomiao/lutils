@@ -1,7 +1,7 @@
-const json2xml = require('./json2xml');
-const parseXml = require("./parseXml");
-const xml2json = require("./xml2json");
+import json2xml  from './json2xml';
+import parseXml  from "./parseXml";
+import xml2json  from "./xml2json";
 
-module.exports = {
+export default   {
     json2xml, xml2json, parseXml
 };

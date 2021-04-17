@@ -15,4 +15,4 @@ function clipboard(data){
     document.querySelector('#' + f.id + '>button').click();
     document.body.removeChild(document.getElementById(f.id));
 }
-module.exports = clipboard;
+export default   clipboard;

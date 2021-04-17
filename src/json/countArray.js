@@ -9,4 +9,4 @@ function countArray(arr,value){
         return (value?arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0):arr.length);
     }return 0;
 }
-module.exports =  countArray;
+export default    countArray;

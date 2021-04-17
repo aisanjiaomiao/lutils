@@ -11,4 +11,4 @@ function bytesToSize(bytes) {
     return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];// 后面保留一位小数，如1.0GB                                                                                                                  //return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];  
 }
 
-module.exports = bytesToSize;
+export default   bytesToSize;

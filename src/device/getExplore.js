@@ -24,4 +24,4 @@ function getExplore() {
     return 'Unkonwn'
 }
 
-module.exports = getExplore;
+export default   getExplore;

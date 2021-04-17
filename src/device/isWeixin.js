@@ -8,4 +8,4 @@ function isWeixin(){
 }
 
 
-module.exports = isWeixin;
+export default   isWeixin;

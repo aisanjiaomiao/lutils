@@ -1,7 +1,7 @@
-const getExplore = require('./getExplore');
-const getOS = require('./getOS');
-const isWeixin = require("./isWeixin")
+import getExplore  from './getExplore';
+import getOS  from './getOS';
+import isWeixin  from "./isWeixin";
 
-module.exports = {
+export default   {
     getExplore, getOS, isWeixin
 };

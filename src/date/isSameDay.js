@@ -19,4 +19,4 @@ function isSameDay(date1, date2) {
 
 }
 
-module.exports = isSameDay
+export default   isSameDay

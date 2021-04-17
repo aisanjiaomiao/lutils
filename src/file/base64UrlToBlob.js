@@ -16,4 +16,4 @@ function base64UrlToBlob(urlData, type, isAB) {
     return isAB ? ab : (new Blob([ab], type || { type: 'application/octet-stream' }));
 }
 
-module.exports = base64UrlToBlob;
+export default   base64UrlToBlob;

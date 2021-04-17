@@ -5,7 +5,7 @@
  * @param  {String} cls 
  */
 
-var hasClass = require('./hasClass');
+var hasClass  from './hasClass');
 
 function addClass(ele, cls) {
     if (!hasClass(ele, cls)) {
@@ -14,4 +14,4 @@ function addClass(ele, cls) {
 }
 
 
-module.exports = addClass;
+export default   addClass;

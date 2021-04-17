@@ -35,4 +35,4 @@ function digitUppercase(n) {
         .replace(/^整$/, '零元整');
 };
 
-module.exports = digitUppercase
+export default   digitUppercase

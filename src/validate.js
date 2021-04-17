@@ -1,4 +1,4 @@
-module.exports = {
+export default   {
     messages: {
         required: "这是必填字段",
         remote: "请修正此字段",

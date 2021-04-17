@@ -11,4 +11,4 @@ function setCookie(name, value, days) {
     document.cookie = name + '=' + value + ';expires=' + date;
 }
 
-module.exports = setCookie
+export default setCookie

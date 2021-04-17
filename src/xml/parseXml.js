@@ -26,4 +26,4 @@ function parseXml(xml) {
     return dom;
 }
 
-module.exports = parseXml;
+export default   parseXml;

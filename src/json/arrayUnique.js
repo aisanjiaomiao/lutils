@@ -8,4 +8,4 @@ function unique(a) {
     return Array.from(new Set(a));
 }
 
-module.exports = arrayUnique;
+export default   arrayUnique;

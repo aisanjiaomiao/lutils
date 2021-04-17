@@ -12,4 +12,4 @@ function getQueryString(name) {//获取url参数值方法2
     }
     return null;
 }
-module.exports = getQueryString
+export default   getQueryString

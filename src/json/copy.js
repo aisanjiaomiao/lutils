@@ -7,4 +7,4 @@ function copy(o) {
     return JSON.parse(JSON.stringify({ d: o })).d;
 }
 
-module.exports = copy;
+export default   copy;

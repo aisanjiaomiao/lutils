@@ -5,7 +5,7 @@
  * @param {String} cls 
  */
 
-var hasClass = require('./hasClass');
+var hasClass  from './hasClass');
 
 function removeClass(ele, cls) {
     if (hasClass(ele, cls)) {
@@ -13,4 +13,4 @@ function removeClass(ele, cls) {
         ele.className = ele.className.replace(reg, ' ');
     }
 }
-module.exports = removeClass;
+export default   removeClass;

@@ -13,4 +13,4 @@ function optionArr2Obj(l, t, v) {
     return c;
 };
 
-module.exports = optionArr2Obj;
+export default   optionArr2Obj;

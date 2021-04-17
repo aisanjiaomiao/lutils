@@ -57,6 +57,6 @@ function getName(keycode) {
         return (k ? k : String.fromCharCode(keycode));
     }
 }
-module.exports = {
+export default   {
     getName
 };

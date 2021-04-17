@@ -17,4 +17,4 @@ function base64UrlToFile(urlData, name, type) {
 }
 
 
-module.exports = base64UrlToFile;
+export default   base64UrlToFile;

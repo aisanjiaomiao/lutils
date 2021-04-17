@@ -14,4 +14,4 @@ function reverse(obj) {
     }
 }
 
-module.exports = reverse
+export default   reverse

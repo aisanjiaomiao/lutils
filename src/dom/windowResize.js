@@ -21,4 +21,4 @@ function windowResize(downCb, upCb) {
 	});
 }
 
-module.exports = windowResize;
+export default   windowResize;

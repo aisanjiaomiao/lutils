@@ -1,8 +1,8 @@
 
-const getQueryObject = require('./getQueryObject');
-const stringfyQueryString = require("./stringfyQueryString");
-const getQueryString = require("./getQueryString");
+import getQueryObject  from './getQueryObject';
+import stringfyQueryString  from "./stringfyQueryString";
+import getQueryString  from "./getQueryString";
 
-module.exports = {
+export default   {
     getQueryObject, stringfyQueryString, getQueryString
 };

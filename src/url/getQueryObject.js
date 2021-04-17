@@ -16,4 +16,4 @@ function getQueryObject(url) {
     }
     return query;
 }
-module.exports = getQueryObject;
+export default   getQueryObject;

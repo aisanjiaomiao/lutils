@@ -19,4 +19,4 @@ function append(dom, str) {
 	});
 }
 
-module.exports = append;
+export default   append;

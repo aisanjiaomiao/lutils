@@ -8,4 +8,4 @@ function isArray(a) {
     return Object.prototype.toString.call(a) == '[object Array]';
 }
 
-module.exports = isArray;
+export default   isArray;

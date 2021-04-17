@@ -20,4 +20,4 @@ function fullScreen(elemet) {
     }
     return false;
 } 
-module.exports = fullScreen;
+export default   fullScreen;

@@ -10,4 +10,4 @@ function objFields(o, f) {
     return n;
 }
 
-module.exports = objFields;
+export default   objFields;

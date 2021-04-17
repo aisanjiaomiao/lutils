@@ -44,4 +44,4 @@ function json2xml(o, tab) {
     return tab ? xml.replace(/\t/g, tab) : xml.replace(/\t|\n/g, "");
  }
 
-module.exports = json2xml;
+export default   json2xml;

@@ -1,10 +1,10 @@
-const replaceAll = require('./replaceAll');
-const digitUppercase = require("./digitUppercase");
-const rtrim = require("./rtrim");
-const ltrim = require("./ltrim");
-const trim = require("./trim");
-const reverse = require("./reverse");
-const ucfirst=require("./ucfirst");
-module.exports = {
+import replaceAll  from './replaceAll';
+import digitUppercase  from "./digitUppercase";
+import rtrim  from "./rtrim";
+import ltrim  from "./ltrim";
+import trim  from "./trim";
+import reverse  from "./reverse";
+import ucfirst from "./ucfirst";
+export default   {
     replaceAll, digitUppercase, rtrim, ltrim, trim, reverse,ucfirst
 };

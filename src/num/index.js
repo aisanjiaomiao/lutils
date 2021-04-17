@@ -108,7 +108,7 @@ function accDiv(arg1, arg2) {
     }
 }
 
-module.exports = {
+export default   {
     accAdd,
     accSub,
     accMul,

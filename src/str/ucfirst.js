@@ -11,6 +11,6 @@ function ucfirst(str) {
     });
     return str;
 };
-module.exports = ucfirst;
+export default   ucfirst;
 
 

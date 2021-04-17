@@ -1,25 +1,25 @@
 /**
- * @desc webpack打包入口文件
+ * @desc 打包入口文件
  */
-const json = require('./json');
-const str = require("./str");
-const support = require("./support");
-const keycode = require("./keycode");
-const file = require("./file");
-const date = require("./date");
-const validate = require("./validate")
-const url = require("./url");
-const random = require("./random");
-const fun = require("./fun");
-const num=require("./num");
-const clipboard = require("./clipboard");
-const cookie = require("./cookie");
+import json from './json';
+import str from "./str";
+import support from "./support";
+import keycode from "./keycode";
+import file from "./file";
+import date from "./date";
+import validate from "./validate";
+import url from "./url";
+import random from "./random";
+import event from "./event";
+import num from "./num";
+import clipboard from "./clipboard";
+import cookie from "./cookie";
 //不常用
-// const dom = require("./dom");
-// const mime = require("./mime");
-// const device = require("./device");
-// const xml = require("./xml");
-module.exports = {
+// import dom  from "./dom";
+// import mime  from "./mime";
+// import device  from "./device";
+// import xml  from "./xml";
+export default {
     cookie,
     json,
     str,
@@ -29,12 +29,12 @@ module.exports = {
     date,
     validate,
     url,
-    fun,
+    event,
     random,
     num,
     clipboard,
-    //不常用
     // dom,
+    //不常用
     // mime,
     // xml,
     // device

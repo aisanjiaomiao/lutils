@@ -11,4 +11,4 @@ function initRangeArray(start, end) {
     }
     return Array.apply(null, Array(end - start)).map((v, i) => i + start);
 }
-module.exports = initRangeArray;
+export default   initRangeArray;

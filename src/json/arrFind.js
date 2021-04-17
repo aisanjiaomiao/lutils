@@ -39,4 +39,4 @@ function arrFind(s, kv, f, m) {
     return o;
 }
 
-module.exports = arrFind;
+export default   arrFind;

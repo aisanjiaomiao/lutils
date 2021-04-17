@@ -6,3 +6,5 @@
 function getTimeStamp(n) {
     return n ? performance.now() : (+new Date());
 }
+
+export default getTimeStamp

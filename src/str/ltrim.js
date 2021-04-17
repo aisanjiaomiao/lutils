@@ -6,4 +6,4 @@
 function ltrim(s) {
     return s.replace(/(^\s*)/g, '');
 }
-module.exports = ltrim;
+export default   ltrim;

@@ -11,4 +11,4 @@ function toBlobURL(f){
     }, 10); 
     return url;
 }
-module.exports = toBlobURL;
+export default   toBlobURL;

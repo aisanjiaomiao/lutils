@@ -8,4 +8,4 @@ function reverse(s) {
     return '';
 }
 
-module.exports = reverse
+export default   reverse

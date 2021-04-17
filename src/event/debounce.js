@@ -1,4 +1,4 @@
-var throttle = require('./throttle');
+import throttle  from './throttle';
 
 /**
  * @desc 函数防抖 
@@ -17,4 +17,4 @@ var throttle = require('./throttle');
 function debounce(delay, atBegin, callback) {
     return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
 };
-module.exports = debounce;
+export default   debounce;

@@ -1,7 +1,7 @@
-const getCookie = require('./getCookie');
-const removeCookie = require('./removeCookie');
-const setCookie = require("./setCookie")
+import getCookie from './getCookie';
+import removeCookie from './removeCookie';
+import setCookie from './setCookie';
 
-module.exports = {
+export default {
     getCookie, removeCookie, setCookie
 };

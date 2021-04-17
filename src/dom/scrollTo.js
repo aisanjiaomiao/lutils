@@ -1,5 +1,5 @@
-var getScrollTop = require('./getScrollTop');
-var setScrollTop = require('./setScrollTop');
+var getScrollTop  from './getScrollTop');
+var setScrollTop  from './setScrollTop');
 var requestAnimFrame = (function () {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
@@ -36,4 +36,4 @@ function scrollTo(to, duration) {
         });
 }
 
-module.exports = scrollTo;
+export default   scrollTo;

@@ -19,6 +19,6 @@ function webP2() {
     });
     img.src = 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA='; //一像素图片
 }
-module.exports = {
+export default   {
     webP, webP2
 };

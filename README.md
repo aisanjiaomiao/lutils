@@ -1,14 +1,14 @@
 # lutils
 
-> 此工具包是在 [outils](https://github.com/proYang/outils/blob/master/README.md) 的基础上,加上个人平时收集的代码片段进行的二次整合
-> outils的GitHub:https://github.com/proYang/outils/blob/master/README.md
-
-
 ## 使用
 
-直接下载`min`目录下的[lutils.min.js](./min/lutils.min.js)或[lutils.full.min.js](./min/lutils.full.min.js)   
-推荐根据自己的的实际需求,自行进行打包
-可通过 `Object.keys(lutils)` 查看内置封装函数
+浏览器端直接引用`dist`目录下的
+- **lutils.min.js**
+- **lutils.full.min.js**
+- **lutils.js**
+- **lutils.min.js**
+库使用是[rollup](https://www.rollupjs.org/guide/en/)进行打包，推荐根据自己的的实际需求自行进行打包
+
 
 ### 浏览器使用示例:
 ``` html 
@@ -105,9 +105,9 @@
 - #### [stringfyQueryString](./src/url/stringfyQueryString.js) 对象序列化为url参数
 - #### [getQueryString](./src/url/getQueryString.js) 根据name获取url参数值
 
-### Fun (Function)
-- #### [throttle](./src/fun/throttle.js) 函数节流
-- #### [debounce](./src/fun/debounce.js) 函数防抖
+### Event 
+- #### [throttle](./src/event/throttle.js) 函数节流
+- #### [debounce](./src/event/debounce.js) 函数防抖
 
 ### Random
 - #### [randomColor](./src/random/index.js) 随机生成颜色

@@ -1,4 +1,4 @@
-﻿module.exports = {
+﻿export default   {
     "*": "application/octet-stream",//（ 二进制流，不知道下载文件类型）
     "tif": "image/tiff",
     "001": "application/x-001",

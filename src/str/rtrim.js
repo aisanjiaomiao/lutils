@@ -7,4 +7,4 @@
 function rtrim(s) {
     return s.replace(/(\s*$)/g, '');
 }
-module.exports = rtrim;
+export default   rtrim;

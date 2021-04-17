@@ -10,4 +10,4 @@ function replaceAll(s0,s1,s2){
     return s0.replace(new RegExp(s1, "gm"), s2);
 }
 
-module.exports =replaceAll ;
+export default  replaceAll ;
