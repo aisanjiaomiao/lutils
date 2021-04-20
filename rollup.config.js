@@ -21,8 +21,8 @@ rollup-plugin-uglify: 压缩 bundle 文件
 rollup-plugin-replace: 类比 Webpack 的 DefinePlugin , 可在源码中通过 process.env.NODE_ENV 用于构建区分 Development 与 Production 环境.
 rollup-plugin-sourcemaps：能生成 sourcemaps 文件
 */
-const full = process.env.FULL ? '.full' : '';
-const min = process.env.MIN ? '.min' : '';
+const full =process.env.FULL=="true" ? '.full' : '';
+const min =process.env.MIN=="true"? '.min' : ''; 
 
 module.exports = {
     input: resolve(`./src/index${full}.js`),

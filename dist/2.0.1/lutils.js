@@ -72,9 +72,9 @@ var lutils = (function () {
     }
 
     function _createForOfIteratorHelper(o, allowArrayLike) {
-      var it;
+      var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
 
-      if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+      if (!it) {
         if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
           if (it) o = it;
           var i = 0;
@@ -107,7 +107,7 @@ var lutils = (function () {
           err;
       return {
         s: function () {
-          it = o[Symbol.iterator]();
+          it = it.call(o);
         },
         n: function () {
           var step = it.next();
@@ -205,7 +205,7 @@ var lutils = (function () {
      * @param {Any} values
      * @return {json}
      */
-    function copy(o) {
+    function copy$1(o) {
       return JSON.parse(JSON.stringify({
         d: o
       })).d;
@@ -394,11 +394,54 @@ var lutils = (function () {
       return n;
     }
 
+    /**   
+     * @desc  获取树结构的节点id路径数组
+     * @param   {Array}     treeArr   
+     * @param   {String|Number}    id id 值
+     * @param   {String}    idStr id key字符串
+     * @param   {String}    chindrenStr  chindren key字符串 
+     * @return  {Array}     数组   
+     */
+    function getTreeNodeIdPath(treeArr, id, idStr, chindrenStr) {
+      if (idStr == undefined) idStr = "id";
+      if (chindrenStr == undefined) chindrenStr = "chindren";
+      treeArr = copy(treeArr);
+      var pathId = [];
+
+      var _fn = function _fn(nodes, pid) {
+        var _iterator = _createForOfIteratorHelper(nodes),
+            _step;
+
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var n = _step.value;
+            n.$pid = pid ? pid.concat(n[idStr]) : [n[idStr]];
+
+            if (n[idStr] == id) {
+              return pathId = n.$pid;
+            }
+
+            if (n[chindrenStr]) {
+              _fn(n[chindrenStr], n.$pid);
+            }
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+      };
+
+      _fn(treeArr, pathId);
+
+      return pathId;
+    }
+
     var json = {
       array2Tree: array2Tree,
       deepClone: deepClone,
       isEmpty: isEmpty,
-      copy: copy,
+      copy: copy$1,
       arrayEqual: arrayEqual,
       isArray: isArray,
       reverse: reverse$1,
@@ -407,7 +450,8 @@ var lutils = (function () {
       countArray: countArray,
       initRangeArray: initRangeArray,
       arrFind: arrFind,
-      objFields: objFields
+      objFields: objFields,
+      getTreeNodeIdPath: getTreeNodeIdPath
     };
 
     /**
@@ -938,18 +982,13 @@ var lutils = (function () {
      * @return {Object} 
      */
     function getQueryObject(url) {
-      url = url == null ? window.location.href : url;
-      var search = url[0] === '?' ? url.substr(1) : url.substring(url.lastIndexOf('?') + 1);
-      if (search === '') return {};
-      search = search.split('&');
-      var query = {};
-
-      for (var i = 0; i < search.length; i++) {
-        var pair = search[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-      }
-
-      return query;
+      url = url ? url : window.location.search;
+      var search = url[0] === '?' ? url : url.substring(url.lastIndexOf('?'));
+      var q = {};
+      search.replace(/([^?&=]+)=([^&]+)/g, function (_, k, v) {
+        return q[k] = v;
+      });
+      return q;
     }
 
     /**
@@ -1068,13 +1107,23 @@ var lutils = (function () {
         return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
       });
     }
+    /**
+     * @desc 生成长度为11的随机字母数字字符串
+     * @return {String}
+     */
+
+
+    function id11() {
+      return Math.random().toString(36).substring(2);
+    }
 
     var random = {
       randomColor: randomColor,
       randomNum: randomNum,
       randomChars: randomChars,
       randomSort: randomSort,
-      UUID: UUID
+      UUID: UUID,
+      id11: id11
     };
 
     /**
@@ -1178,7 +1227,7 @@ var lutils = (function () {
       return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
     }
 
-    var fun = {
+    var event = {
       throttle: throttle,
       debounce: debounce
     };
@@ -1394,7 +1443,7 @@ var lutils = (function () {
     // import device  from "./device";
     // import xml  from "./xml";
 
-    var index_full = {
+    var index = {
       cookie: cookie,
       json: json,
       str: str,
@@ -1404,7 +1453,7 @@ var lutils = (function () {
       date: date,
       validate: validate,
       url: url,
-      fun: fun,
+      event: event,
       random: random,
       num: num,
       clipboard: clipboard // dom,
@@ -1415,6 +1464,6 @@ var lutils = (function () {
 
     };
 
-    return index_full;
+    return index;
 
 }());
