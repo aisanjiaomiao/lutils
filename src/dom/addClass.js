@@ -5,7 +5,7 @@
  * @param  {String} cls 
  */
 
-var hasClass  from './hasClass');
+ import hasClass  from './hasClass';
 
 function addClass(ele, cls) {
     if (!hasClass(ele, cls)) {

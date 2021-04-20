@@ -1,6 +1,6 @@
-var getScrollTop  from './getScrollTop');
-var setScrollTop  from './setScrollTop');
-var requestAnimFrame = (function () {
+import getScrollTop  from './getScrollTop';
+import setScrollTop  from './setScrollTop';
+const requestAnimFrame = (function () {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
