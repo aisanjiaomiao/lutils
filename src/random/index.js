@@ -52,6 +52,14 @@ function UUID(){
 	return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>(c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
 }
 
+/**
+ * @desc 生成长度为11的随机字母数字字符串
+ * @return {String}
+ */
+function id11(){
+	return Math.random().toString(36).substring(2);
+}
+
 export default   {
-    randomColor, randomNum, randomChars,randomSort,UUID
+    randomColor, randomNum, randomChars,randomSort,UUID,id11
 };
