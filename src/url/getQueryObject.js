@@ -5,15 +5,10 @@
  * @return {Object} 
  */
 function getQueryObject(url) {
-    url = url == null ? window.location.href : url
-    var search = url[0] === '?' ? url.substr(1) : url.substring(url.lastIndexOf('?') + 1)
-    if (search === '') return {}
-    search = search.split('&');
-    var query = {};
-    for (var i = 0; i < search.length; i++) {
-        var pair = search[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-    }
-    return query;
+    url = url ? url:window.location.search ;
+    let search = url[0] === '?' ? url : url.substring(url.lastIndexOf('?')); 
+    let q = {};
+    search.replace(/([^?&=]+)=([^&]+)/g, (_, k, v) => q[k] = v);
+    return q; 
 }
-export default   getQueryObject;
+export default getQueryObject;
