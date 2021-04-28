@@ -8,7 +8,7 @@ function getQueryObject(url) {
     url = url ? url:window.location.search ;
     let search = url[0] === '?' ? url : url.substring(url.lastIndexOf('?')); 
     let q = {};
-    search.replace(/([^?&=]+)=([^&]+)/g, (_, k, v) => q[k] = v);
+    search.replace(/([^?&=]+)=([^&]+)/g, (_, k, v) => q[k] = decodeURIComponent(v));
     return q; 
 }
 export default getQueryObject;

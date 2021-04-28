@@ -862,12 +862,33 @@ var lutils = (function () {
       return n ? performance.now() : +new Date();
     }
 
+    /**
+     * @desc   通过时间戳获取中国日期+时间
+     * @param  {Number} timestamp 时间戳
+     * @return {Boolean}
+     */
+    function toCSTString(timestamp) {
+      return new Date((timestamp || +new Date()) + 8 * 3600 * 1000).toISOString();
+    }
+
+    /**
+     * @desc   通过时间戳获取中国日期
+     * @param  {Number} timestamp 时间戳
+     * @return {Boolean}
+     */
+
+    function toCSTDateString(timestamp) {
+      return toCSTString().split('T')[0];
+    }
+
     var date = {
       string2date: string2date,
       formatPassTime: formatPassTime,
       formatRemainTime: formatRemainTime,
       isSameDay: isSameDay,
-      getTimeStamp: getTimeStamp
+      getTimeStamp: getTimeStamp,
+      toCSTString: toCSTString,
+      toCSTDateString: toCSTDateString
     };
 
     var validate = {
@@ -986,7 +1007,7 @@ var lutils = (function () {
       var search = url[0] === '?' ? url : url.substring(url.lastIndexOf('?'));
       var q = {};
       search.replace(/([^?&=]+)=([^&]+)/g, function (_, k, v) {
-        return q[k] = v;
+        return q[k] = decodeURIComponent(v);
       });
       return q;
     }
