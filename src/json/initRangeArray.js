@@ -5,10 +5,7 @@
  * @return {Array} 
  */
 function initRangeArray(start, end) {
-    if (typeof end != "number") {
-        end = start;
-        start = 0;
-    }
+    if (typeof end != "number") [start,end]=[0,start];
     return Array.apply(null, Array(end - start)).map((v, i) => i + start);
 }
 export default   initRangeArray;
