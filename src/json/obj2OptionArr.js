@@ -6,14 +6,15 @@
  * @return {Object} 
  */
 function obj2OptionArr(o, t, v) {
-    var l = [];
+    return Object.entries(o).map(([k,i])=>({[t||"label"]:k,[v||"value"]:i}))
+    /*var l = [];
     for (var i in o) {
         var c={}
         c[t]=i;
         c[v]=o[i];
         l.push(c);
     }
-    return l;
+    return l;*/
 };
 
 export default   obj2OptionArr;
