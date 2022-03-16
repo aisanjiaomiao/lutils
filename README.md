@@ -41,7 +41,11 @@
 - #### [optionArr2Obj](./src/json/optionArr2Obj.js) 例如:[{value: '选项1',label: '黄金糕'},...] 转 {'黄金糕':'选项1',...}
 - #### [obj2OptionArr](./src/json/obj2OptionArr.js) 例如:{'黄金糕':'选项1',...} 转[{value: '选项1',label: '黄金糕'},...]
 - #### [initRangeArray](./src/json/initRangeArray.js) 生成指定范围的整数数组
+- #### [getTreeNodeIdPath](./src/json/getTreeNodeIdPath.js) 获取树结构的节点id路径数组（常用于文件路径路由生成）
+- #### [objectProxy](./src/json/objectProxy.js) 生成对象代理
+- #### [storageProxy](./src/json/storageProxy.js) 生成storage对象代理
 - #### [arrFind](./src/json/arrFind.js) 数组查找出想要对对象或数组
+
 - #### [objFields](./src/json/objFields.js) 过滤出字段组成新对象
 
 ### Str (String)
