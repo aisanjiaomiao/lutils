@@ -46,6 +46,7 @@
 - #### [objectProxy](./src/json/objectProxy.js) 生成对象代理
 - #### [storageProxy](./src/json/storageProxy.js) 生成storage对象代理
 - #### [paginationParse](./src/json/paginationParse.js) 虚拟分页计算处理器
+- #### [getPageData](./src/json/getPageData.js) 获取数组分页数据
 - #### [arrFind](./src/json/arrFind.js) 数组查找出想要对对象或数组
 
 - #### [objFields](./src/json/objFields.js) 过滤出字段组成新对象
