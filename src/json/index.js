@@ -14,7 +14,8 @@ import objFields from "./objFields";
 import getTreeNodeIdPath from "./getTreeNodeIdPath";
 import objectProxy from "./objectProxy";
 import storageProxy from "./storageProxy";
+import paginationParse from "./paginationParse";
 
 export default {
-    array2Tree, deepClone, isEmpty, copy, arrayEqual, isArray, reverse, optionArr2Obj, obj2OptionArr, countArray, initRangeArray, arrFind, objFields, getTreeNodeIdPath,storageProxy,objectProxy,
+    array2Tree, deepClone, isEmpty, copy, arrayEqual, isArray, reverse, optionArr2Obj, obj2OptionArr, countArray, initRangeArray, arrFind, objFields, getTreeNodeIdPath,storageProxy,objectProxy,paginationParse
 };

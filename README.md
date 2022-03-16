@@ -4,7 +4,7 @@
 
 ## 使用
 
-浏览器端直接引用`dist`目录下的
+1. 浏览器端直接引用`dist`目录下的
 - **lutils.min.js**
 - **lutils.full.min.js**
 - **lutils.js**
@@ -12,6 +12,7 @@
   
 库使用是[rollup](https://www.rollupjs.org/guide/en/)进行打包，推荐根据自己的的实际需求自行进行打包
 
+2. 根据需求复制库中代码到项目中
 
 ### 浏览器使用示例:
 ``` html 
@@ -44,6 +45,7 @@
 - #### [getTreeNodeIdPath](./src/json/getTreeNodeIdPath.js) 获取树结构的节点id路径数组（常用于文件路径路由生成）
 - #### [objectProxy](./src/json/objectProxy.js) 生成对象代理
 - #### [storageProxy](./src/json/storageProxy.js) 生成storage对象代理
+- #### [paginationParse](./src/json/paginationParse.js) 虚拟分页计算处理器
 - #### [arrFind](./src/json/arrFind.js) 数组查找出想要对对象或数组
 
 - #### [objFields](./src/json/objFields.js) 过滤出字段组成新对象
