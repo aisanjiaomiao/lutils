@@ -27,14 +27,14 @@ export default {
     keycode,
     file,
     date,
-    validate,
     url,
     event,
     random,
     num,
     clipboard,
-    // dom,
     //不常用
+    // validate,
+    // dom,
     // mime,
     // xml,
     // device
