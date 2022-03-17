@@ -59,6 +59,7 @@
 - #### [trim](./src/str/trim.js) 去除右空格
 - #### [reverse](./src/str/reverse.js) 字符串倒转
 - #### [ucfirst](./src/str/ucfirst.js) 英文字符串首字母大写
+- #### [beforeFillChar](./src/str/beforeFillChar.js) 在字符串之前根据长度填充自定义字符
 
 ### Support
 - #### [webP](./src/support/index.js) 判断浏览器是否支持webP格式图片
