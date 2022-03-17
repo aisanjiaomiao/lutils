@@ -150,6 +150,7 @@
 - #### [getExplore](./src/device/getExplore.js) 获取浏览器类型和版本号
 - #### [getOS](./src/device/getOS.js) 获取操作系统类型
 - #### [isWeixin](./src/device/isWeixin.js) 获取是微信浏览器
+- #### [isMobile](./src/device/isWeixin.js) 获取是移动端浏览器
 
 ### [Mime](./src/mime.js)
 - #### 描述消息内容类型

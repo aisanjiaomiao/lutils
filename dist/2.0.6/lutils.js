@@ -9,7 +9,7 @@ var lutils = (function () {
      * @param   {String}    children的字符串   
      * @return  {Array}     数组   
      */
-    function array2Tree(a, idStr, pidStr, chindrenStr) {
+    function array2Tree(a, idStr, pidStr, chindrenStr, addHash) {
       var r = [],
           hash = {},
           id = idStr,
@@ -35,7 +35,10 @@ var lutils = (function () {
         }
       }
 
-      return r;
+      return addHash ? {
+        hash: hash,
+        tree: r
+      } : r;
     }
 
     function _typeof(obj) {
@@ -788,7 +791,7 @@ var lutils = (function () {
     }
 
     /** 
-     ** @desc 数字转字符串并且填充0
+     ** @desc 在字符串之前根据长度填充自定义字符
      ** @param  {Number} 数字
      ** @param {Number} 长度
      ** @param {String} 填充字符
@@ -808,102 +811,6 @@ var lutils = (function () {
       reverse: reverse,
       ucfirst: ucfirst,
       beforeFillChar: beforeFillChar
-    };
-
-    /**
-     * 
-     * @desc 判断浏览器是否支持webP格式图片
-     * @return {Boolean} 
-     */
-    function webP() {
-      return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
-    }
-    /**
-     * 
-     * @desc 判断浏览器是否支持webP格式图片
-     * @return {Boolean} 
-     */
-
-
-    function webP2() {
-      var img = new Image();
-
-      img.onload = img.onerror = function (event) {
-        //如果进入加载且图片宽度为1(通过图片宽度值判断图片是否可以显示)
-        return event && event.type === 'load' ? img.width == 1 : false;
-      };
-
-      img.src = 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA='; //一像素图片
-    }
-
-    var support = {
-      webP: webP,
-      webP2: webP2
-    };
-
-    /**
-    * @desc 根据keycode获得键名
-    * @param  {Number} keycode 
-    * @return {String}
-    */
-    function getName(keycode) {
-      if (keycode) {
-        var k = {
-          //自行修改
-          "8": "Backspace",
-          "9": "TAB",
-          "13": "回车",
-          "16": "Shift",
-          "17": "Ctrl",
-          "18": "Alt",
-          "20": "CAPSSlOCK",
-          "27": "ESC",
-          "32": "空格",
-          "33": "PgUp",
-          "34": "PgDn",
-          "35": "End",
-          "36": "Home",
-          "37": "←",
-          "38": "↑",
-          "39": "→",
-          "40": "↓",
-          "44": "PrtSc",
-          "45": "Insert",
-          "46": "Delete",
-          "91": "Win",
-          "112": "F1",
-          "113": "F2",
-          "114": "F3",
-          "115": "F4",
-          "116": "F5",
-          "117": "F6",
-          "118": "F7",
-          "119": "F8",
-          "120": "F9",
-          "121": "F10",
-          "122": "F11",
-          "123": "F12",
-          "173": "静音",
-          "174": "音量减",
-          "175": "音量加",
-          "186": ";",
-          "187": "=",
-          "188": ",",
-          "189": "-",
-          "190": ".",
-          "191": "/",
-          "219": "[",
-          "220": "\\",
-          "221": "]",
-          "222": "'",
-          "255": "Fn"
-        }[keycode];
-        return k ? k : String.fromCharCode(keycode);
-      }
-    }
-
-    var keycode = {
-      getName: getName
     };
 
     /**
@@ -1643,15 +1550,15 @@ var lutils = (function () {
       cookie: cookie,
       json: json,
       str: str,
-      support: support,
-      keycode: keycode,
       file: file,
       date: date,
       url: url,
       event: event,
       random: random,
       num: num,
-      clipboard: clipboard //不常用
+      clipboard: clipboard // support,
+      //不常用
+      // keycode,
       // validate,
       // dom,
       // mime,

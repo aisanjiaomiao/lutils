@@ -6,7 +6,7 @@
  * @param   {String}    children的字符串   
  * @return  {Array}     数组   
  */    
-function array2Tree(a, idStr, pidStr, chindrenStr){    
+function array2Tree(a, idStr, pidStr, chindrenStr,addHash){    
     var r = [], hash = {}, id = idStr, pid = pidStr, children = chindrenStr, i = 0, j = 0, len = a.length;    
     for(; i < len; i++){    
         hash[a[i][id]] = a[i];    
@@ -20,7 +20,7 @@ function array2Tree(a, idStr, pidStr, chindrenStr){
             r.push(aVal);    
         }    
     }    
-    return r;    
+    return addHash?{hash,tree:r}:r;    
 }
 
-export default   array2Tree
+export default array2Tree;

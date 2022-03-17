@@ -9,7 +9,7 @@ var lutils = (function () {
      * @param   {String}    children的字符串   
      * @return  {Array}     数组   
      */
-    function array2Tree(a, idStr, pidStr, chindrenStr) {
+    function array2Tree(a, idStr, pidStr, chindrenStr, addHash) {
       var r = [],
           hash = {},
           id = idStr,
@@ -35,7 +35,10 @@ var lutils = (function () {
         }
       }
 
-      return r;
+      return addHash ? {
+        hash: hash,
+        tree: r
+      } : r;
     }
 
     function _typeof(obj) {
@@ -788,7 +791,7 @@ var lutils = (function () {
     }
 
     /** 
-     ** @desc 数字转字符串并且填充0
+     ** @desc 在字符串之前根据长度填充自定义字符
      ** @param  {Number} 数字
      ** @param {Number} 长度
      ** @param {String} 填充字符
@@ -811,17 +814,17 @@ var lutils = (function () {
     };
 
     /**
-     * 
+     *
      * @desc 判断浏览器是否支持webP格式图片
-     * @return {Boolean} 
+     * @return {Boolean}
      */
     function webP() {
-      return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
+      return !![].map && document.createElement("canvas").toDataURL("image/webp").indexOf("data:image/webp") == 0;
     }
     /**
-     * 
+     *
      * @desc 判断浏览器是否支持webP格式图片
-     * @return {Boolean} 
+     * @return {Boolean}
      */
 
 
@@ -830,10 +833,10 @@ var lutils = (function () {
 
       img.onload = img.onerror = function (event) {
         //如果进入加载且图片宽度为1(通过图片宽度值判断图片是否可以显示)
-        return event && event.type === 'load' ? img.width == 1 : false;
+        return event && event.type === "load" ? img.width == 1 : false;
       };
 
-      img.src = 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA='; //一像素图片
+      img.src = "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA="; //一像素图片
     }
 
     var support = {
@@ -2053,10 +2056,47 @@ var lutils = (function () {
       return ua.indexOf('micromessenger') != -1;
     }
 
+    /**
+     *
+     * @desc 判断浏览器是移动端
+     * @return {Boolean}
+     */
+    function isMobile() {
+      var agent = navigator.userAgent.toLowerCase();
+      var keywords = ["android", "iphone", "ipod", "ipad", "windows phone", "mqqbrowser"];
+      var flag = false; //排除 Windows 桌面系统
+
+      if (agent.indexOf("Windows NT") < 0 || agent.indexOf("Windows NT") >= 0 && agent.indexOf("compatible; MSIE 9.0;") >= 0) {
+        //排除 苹果桌面系统
+        if (agent.indexOf("Windows NT") < 0 && agent.indexOf("Macintosh") < 0) {
+          var _iterator = _createForOfIteratorHelper(keywords),
+              _step;
+
+          try {
+            for (_iterator.s(); !(_step = _iterator.n()).done;) {
+              var item = _step.value;
+
+              if (agent.indexOf(item) >= 0) {
+                flag = true;
+                break;
+              }
+            }
+          } catch (err) {
+            _iterator.e(err);
+          } finally {
+            _iterator.f();
+          }
+        }
+      }
+
+      return flag;
+    }
+
     var device = {
       getExplore: getExplore,
       getOS: getOS,
-      isWeixin: isWeixin
+      isWeixin: isWeixin,
+      isMobile: isMobile
     };
 
     /**

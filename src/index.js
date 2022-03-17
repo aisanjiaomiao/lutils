@@ -23,8 +23,6 @@ export default {
     cookie,
     json,
     str,
-    support,
-    keycode,
     file,
     date,
     url,
@@ -32,7 +30,9 @@ export default {
     random,
     num,
     clipboard,
+    // support,
     //不常用
+    // keycode,
     // validate,
     // dom,
     // mime,
