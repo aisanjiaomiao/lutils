@@ -80,6 +80,7 @@
 - #### [accSub](./src/num/index.js) 精确的减法计算
 - #### [accMul](./src/num/index.js) 精确的乘法计算 
 - #### [accDiv](./src/num/index.js) 精确的除法计算
+- #### [fillZero](./src/num/index.js) 数字转字符串并且填充0
 
 ### Date (日期时间处理推荐结合[moment.js](http://momentjs.cn/)使用)
 - #### [string2date](./src/date/string2date.js) 字符串时间转为Js Date类型

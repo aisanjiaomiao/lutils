@@ -108,9 +108,22 @@ function accDiv(arg1, arg2) {
     }
 }
 
+/** 
+ ** @desc 数字转字符串并且填充0
+ ** @param  {Number} 数字
+ ** @param {Number} 长度
+ ** @return {String}  
+ **/
+function fillZero(num,len){
+    let numStr=num+"";
+    if(numStr.length>len||!len)return numStr;
+    return Array(len-numStr.length).fill(0).join("")+numStr;
+}
+
 export default   {
     accAdd,
     accSub,
     accMul,
-    accDiv
+    accDiv,
+    fillZero
 };
