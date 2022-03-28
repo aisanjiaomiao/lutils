@@ -31,7 +31,7 @@ function storageProxy(conf) {
     },
     update() {
       storage.setItem(name, JSON.stringify(this));
-      update();
+      if (update) update();
     },
   });
 }

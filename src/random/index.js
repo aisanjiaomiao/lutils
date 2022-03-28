@@ -1,5 +1,13 @@
 /**
  * 
+ * @desc 随机 True/ False
+ * @return {Boolean} 
+ */
+function randomBoolean () {
+    return Math.random() >=0.5;
+}
+/**
+ * 
  * @desc 随机生成颜色
  * @return {String} 
  */
@@ -61,5 +69,5 @@ function id11(){
 }
 
 export default   {
-    randomColor, randomNum, randomChars,randomSort,UUID,id11
+    randomColor, randomNum, randomChars,randomSort,UUID,id11,randomBoolean
 };
