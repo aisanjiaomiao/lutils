@@ -1,6 +1,6 @@
 {
   "name": "lutils",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "个人日常收集的JavaScript函数库",
   "scripts": {
     "build": "node build.js",

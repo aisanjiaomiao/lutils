@@ -9,6 +9,7 @@ import windowResize  from './windowResize';
 import append from "./append";
 import fullScreen from "./fullscreen";
 import exitFullScreen from "./exitfullscreen";
+import ScaleResize from "./scaleResize";
 
 export default   {
     addClass,
@@ -21,5 +22,6 @@ export default   {
     windowResize,
     append,
     fullScreen,
-    exitFullScreen
+    exitFullScreen,
+    ScaleResize
 };

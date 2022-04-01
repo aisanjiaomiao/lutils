@@ -141,6 +141,7 @@
 - #### [append](./src/dom/append.js) 追加html类似jQ中的html()
 - #### [fullScreen](./src/dom/fullscreen.js) 进入全屏模式
 - #### [exitFullScreen](./src/dom/exitfullscreen.js) 退出全屏模式
+- #### [ScaleResize](./src/dom/ScaleResize.js) 全屏自适应缩放
 
 ### Xml
 - #### [json2xml](./src/xml/json2xml.js) json转xml文本
